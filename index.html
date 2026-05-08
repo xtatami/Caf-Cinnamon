@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un sabor Mágico</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* altura mínima de pantalla */
+  width: 100%;
+  background: url('https://i.imgur.com/VU7M9To.png') no-repeat center center fixed;
+  background-size: cover; /* el fondo se adapta al tamaño */
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+
+  .intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: brightness(0.8); /* oscurece un poco para contraste */
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: #ffeb3b;
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+
+  #startBtn {
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background-color: white;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  #startBtn:hover {
+    background-color: #1a1a1a;
+    color: white;
+  }
+
+  .main-content {
+    display: none;
+    padding: 40px;
+  }
+
+  /* --- 9. MOBILE RESPONSIVENESS --- */
+  @media (max-width: 1024px) {
+    body { overflow: auto; padding: 20px; display: block; height: auto;}
+    .container { width: 100%; height: auto; overflow: hidden; margin-bottom: 50px; background-image: none;}
+    body:hover .container { width: 100%; }
+    .data-terminal { position: relative; opacity: 1; transform: none; width: auto; height: auto; margin-bottom: 20px; }
+    .player-container { top: 0; position: relative; margin-bottom: 10px; }
+    .character-art-container, .manga-panel, .gantz-ui-orb, .scanlines { display: none; }
+    .terminal-main { height: auto; }
+  }
+</style>
+</head>
+<body>
+  <!-- Intro -->
+  <section class="intro">
+    <h1>ES ALGO MÁS QUE UN</h1>
+    <h2>CAFÉ</h2>
+    <button id="startBtn">Iniciar</button>
+  </section>
+
+  <!-- Main Content -->
+  <section class="main-content">
+    <!-- Aquí va TODO tu código: reproductor, panels, data-terminal, etc. -->
+    <div class="container">
+
+<script>
+  const startBtn = document.getElementById("startBtn");
+  const intro = document.querySelector(".intro");
+  const mainContent = document.querySelector(".main-content");
+
+  startBtn.addEventListener("click", () => {
+    intro.style.display = "none";
+    mainContent.style.display = "block";
+  });
+</script>
+</body>
+</html>
+<!-- Sección Café Cinnamon -->
+<section class="cafe-cinnamon">
+  <div class="cafe-container">
+    <div class="cafe-images">
+      <img src="https://i.imgur.com/Ts6H4aH.jpeg" alt="Botellas de vino Café Cinnamon">
+      <img src="https://i.imgur.com/KFg0akp.jpeg" alt="Área del café con luces cálidas">
+    </div>
+
+    <div class="cafe-text">
+      <h1>CAFÉ CINNAMON</h1>
+      <p>
+        Café Cinnamon en Ocotal se ha consolidado como un espacio gastronómico que combina comodidad, modernidad y un estilo visual atractivo, ofreciendo a sus clientes mucho más que café y alimentos: una experiencia social y compartible. Su ambiente acogedor y su concepto instagrameable han generado gran interés en redes sociales, atrayendo tanto a jóvenes como a familias y grupos de amigos. La cuidada presentación de productos y la atmósfera diseñada para la convivencia fortalecen su identidad dentro del mercado local, mientras que su activa presencia digital amplifica la visibilidad y fomenta la interacción con el público. En conjunto, Café Cinnamon se posiciona como un lugar que no solo satisface el consumo de alimentos y bebidas, sino que crea experiencias agradables, memorables y compartibles, convirtiéndose en un referente de la vida social y gastronómica de la ciudad.
+      </p>
+      <button class="menu-btn">VER MENU</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cafe-cinnamon {
+    background-color: #f8f8f4;
+    color: #000;
+    padding: 60px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cafe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+  }
+
+  .cafe-images {
+    display: flex;
+    flex-direction: row; /* ahora en fila */
+    gap: 20px;
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .cafe-images img {
+    width: 50%; /* cada imagen ocupa la mitad */
+    height: 400px; /* altura larga */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    object-fit: cover;
+  }
+
+  .cafe-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: justify;
+    line-height: 1.8; /* más espacio entre letras */
+  }
+
+  .cafe-text h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .cafe-text p {
+    font-size: 1rem;
+    margin-bottom: 35px;
+  }
+
+  .menu-btn {
+    display: block;
+    margin: 0 auto;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .menu-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 1024px) {
+    .cafe-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .cafe-images {
+      flex-direction: column;
+    }
+    .cafe-images img {
+      width: 100%;
+      height: auto;
+    }
+    .cafe-text h1 { font-size: 2rem; }
+    .cafe-text p { font-size: 0.95rem; }
+  }
+</style>
+<!-- Sección Menú Principal -->
+<section class="menu-principal" id="menuPrincipal" style="display:none;">
+  <h1>CAFÉ CINNAMON OCOTAL</h1>
+  <div class="menu-grid">
+    <div class="menu-card" onclick="mostrarMenu('cocteles')">
+      <img src="https://i.imgur.com/LxptNLJ.jpeg" alt="Menú de Cocteles">
+      <h2>🍸 MENÚ DE COCTELES</h2>
+    </div>
+    <div class="menu-card" onclick="mostrarMenu('batidos')">
+      <img src="https://i.imgur.com/rz0PaLr.jpeg" alt="Batidos y Licuados">
+      <h2>🍓 BATIDOS Y LICUADOS</h2>
+    </div>
+    <div class="menu-card" onclick="mostrarMenu('carta')">
+      <img src="https://i.imgur.com/Y8qx8Zg.jpeg" alt="Menú a la Carta">
+      <h2>🍽️ MENÚ A LA CARTA</h2>
+    </div>
+  </div>
+
+  <!-- Texto pequeño debajo -->
+  <p class="menu-info">
+    📍 Dirección: portón principal de la Tabacalera Protasa, 1/2 cuadra al sur, Ocotal NS<br>
+    ☕ Se vende café caliente y helado, postres, batidos, pizzas y platos a la carta.
+  </p>
+</section>
+
+<style>
+  .menu-info {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-top: 20px;
+    line-height: 1.4;
+  }
+</style>
+
+
+<!-- Secciones individuales de menú -->
+<section class="menu-detalle" id="menuCocteles" style="display:none;">
+  <h1>MENÚ DE COCTELES</h1>
+  <ul>
+ <li>Sexo en la Jungla — C$120</li>
+    <li>Sexo en la Playa — C$120</li>
+    <li>Caipirinha — C$110</li>
+    <li>Molotov — C$120</li>
+    <li>Sorpresa en Barbados — C$120</li>
+    <li>Piña Colada — C$120</li>
+    <li>Sangría con Manzana — C$170</li>
+    <li>Jarra de Sangría — C$340</li>
+    <li>Laguna Azul — C$120</li>
+    <li>Margarita — C$120</li>
+    <li>Blue Margarita — C$120</li>
+    <li>Margarita Mango — C$120</li>
+    <li>Margarita Strawberry — C$120</li>
+    <li>Mojito Maracuyá — C$120</li>
+    <li>Mojito Strawberry — C$120</li>
+    <li>Mojito — C$120</li>
+    <li>Coffee Cinnamon — C$140</li>
+    <li>Café Cinnamon Bar Café — C$140</li>
+    <li>Café de la Casa — C$140</li>
+  </ul>
+
+  <h2>🍈 DIGESTIVOS</h2>
+  <ul>
+    <li>Licor de Melón — C$100</li>
+  </ul>
+
+  <h2>🍹 SIN ALCOHOL</h2>
+  <ul>
+    <li>San Francisco — C$90</li>
+    <li>Don Pitufos — C$90</li>
+  </ul>
+
+  <h2>🍷 MENÚ DE VINOS</h2>
+  <h3>Tintos</h3>
+  <ul>
+    <li>Borsao Español — C$700</li>
+    <li>Finca Las Moras (Argentino) — C$700</li>
+    <li>Altos Ibéricos (Español) — C$970</li>
+    <li>19 Crimes Cali Red — C$1,300</li>
+  </ul>
+
+  <h3>Blancos</h3>
+  <ul>
+    <li>Moscato Bottega (Vino del Amor) — C$1,200</li>
+    <li>J.P. Chanet (Francés) — C$800</li>
+  </ul>
+
+  <h3>Copas</h3>
+  <ul>
+    <li>Copa de Vino (Finca Las Moras) — C$160</li>
+    <li>Copa de Vino (Borsao Español) — C$160</li>
+  </ul>
+
+  <p><strong>¡LOS DÍAS MIÉRCOLES CERRAMOS!</strong></p>
+  </ul>
+  <button onclick="volverMenu()">Volver</button>
+</section>
+
+<section class="menu-detalle" id="menuBatidos" style="display:none;">
+<h2>🍓 BATIDOS Y LICUADOS</h2>
+
+  <h3>CON YOGURT</h3>
+  <ul>
+    <li>Fresa — C$100</li>
+    <li>Fresa con Banano — C$100</li>
+    <li>Fresa con Manzana — C$100</li>
+    <li>Fresa, Manzana, Uva — C$100</li>
+    <li>Fresa, Manzana, Piña — C$100</li>
+    <li>Manzana, Banano — C$90</li>
+    <li>Manzana, Piña, Banano — C$90</li>
+    <li>Manzana, Piña, Uva — C$90</li>
+    <li>Frutos Rojos — C$100</li>
+    <li>Piña — C$90
+        </ul>
+
+  <h3>CON LECHE O JUGO DE NARANJA</h3>
+  <ul>
+    <li>Papaya — C$60</li>
+    <li>Melón — C$60</li>
+    <li>Piña — C$60</li>
+    <li>Mix de Frutas — C$60</li>
+    <li>Banano — C$60</li>
+  </ul>
+
+  <h3>CON GALLETA</h3>
+  <ul>
+    <li>Snicker — C$140</li>
+    <li>Chips Ahoy — C$140</li>
+    <li>Galleta y Leche de Avena — C$100</li>
+    <li>Oreo — C$100</li>
+    <li>Oreo Strawberry — C$120</li>
+    <li>Blue Tiliche — C$120</li>
+    <li>Deslactosada — C$100</li>
+    <li>Avena — C$100</li>
+    <li>Almendra — C$140</li>
+  </ul>
+
+  <h3>CON LECHE</h3>
+  <ul>
+    <li>Chocolate — C$60</li>
+    <li>Fresa — C$60</li>
+    <li>Batido Barbie — C$60</li>
+    <li>Banano con Maní — C$60</li>
+  </ul>
+
+  <h3>ESPECIAL DE LA CASA</h3>
+  <ul>
+    <li>Fresa, Manzana, Uva — C$100</li>
+    <li>Vonoaca — C$100</li>
+  </ul>
+
+  <h3>BATIDOS VERDES</h3>
+  <ul>
+    <li>Manzana Verde, Apio, Pepino — C$80</li>
+    <li>Manzana Verde, Piña — C$80</li>
+    <li>Manzana Verde, Jengibre, Piña — C$90</li>
+    <li>Manzana Verde, Piña, Apio — C$90</li>
+  </ul>
+  <p><strong>¡LOS DÍAS MIÉRCOLES CERRAMOS!</strong></p>
+  </ul>
+  <button onclick="volverMenu()">Volver</button>
+</section>
+
+<section class="menu-detalle" id="menuCarta" style="display:none;">
+  <h1>MENÚ A LA CARTA</h1>
+</ul>
+
+  <h2>PARA PICAR</h2>
+  <ul>
+    <li>Papas con Quesillo — C$180</li>
+    <li>Papas con Quesillo y Chorizo — C$260</li>
+    <li>Tostones con Quesillo — C$180</li>
+    <li>Tostones con Quesillo y Chorizo — C$260</li>
+  </ul>
+
+  <h2>MONTADITOS</h2>
+  <ul>
+    <li>Jamón — C$180</li>
+    <li>Huevo — C$180</li>
+    <li>Chorizo — C$210</li>
+    <li>Especial — C$210</li>
+    <li>Pollo — C$210</li>
+  </ul>
+
+  <h2>ENSALADAS</h2>
+  <ul>
+    <li>Clásica — C$180</li>
+    <li>Hawaiana — C$220</li>
+    <li>César — C$220</li>
+    <li>Vegetariana — C$220</li>
+    <li>Pollo — C$280</li>
+  </ul>
+
+  <h2>🥩 PLATOS FUERTES</h2>
+
+  <h3>RES</h3>
+  <ul>
+    <li>Ribeye — C$880</li>
+    <li>New York Steak — C$580</li>
+    <li>Churrasco — C$450</li>
+    <li>Jalapeño — C$450</li>
+    <li>Filete a la Plancha — C$430</li>
+    <li>Encebollado — C$410</li>
+  </ul>
+
+  <h3>POLLO</h3>
+  <ul>
+    <li>Filete a la Plancha — C$330</li>
+    <li>Filete Empanizado — C$340</li>
+    <li>Fajitas a la Plancha — C$340</li>
+    <li>Fajitas Empanizadas — C$340</li>
+    <li>Filete en Salsa Jalapeña — C$340</li>
+    <li>Churrasco de Pollo — C$350</li>
+  </ul>
+
+  <h3>CERDO</h3>
+  <ul>
+    <li>Chuleta Ahumada — C$390</li>
+    <li>En Salsa de Tomate — C$390</li>
+    <li>Filete a la Plancha — C$340</li>
+    <li>Filete Empanizado — C$370</li>
+  </ul>
+
+  <h3>PESCADO Y MARISCO</h3>
+  <ul>
+    <li>Filete de Corvina a la Plancha — C$310</li>
+    <li>Filete de Corvina Empanizada — C$340</li>
+    <li>Camarones al Ajillo — C$450</li>
+    <li>Camarones Empanizados — C$450</li>
+    <li>Camarones en Salsa Criolla — C$440</li>
+  
+  </ul>
+    <p><strong>¡LOS DÍAS MIÉRCOLES CERRAMOS!</strong></p>
+  </ul>
+  <button onclick="volverMenu()">Volver</button>
+</section>
+
+<style>
+  .menu-principal {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 10%;
+    text-align: center;
+  }
+
+  .menu-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .menu-card {
+    background-color: #111;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    width: 280px;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .menu-card h2 {
+    padding: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+
+  .menu-card:hover {
+    transform: scale(1.05);
+  }
+
+  .menu-detalle {
+    background-color: #f8f8f4;
+    color: #000;
+    padding: 60px 10%;
+    text-align: center;
+  }
+
+  .menu-detalle ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 2;
+  }
+
+  .menu-detalle button {
+    margin-top: 30px;
+    padding: 10px 30px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .menu-detalle button:hover {
+    background-color: #333;
+  }
+</style>
+
+<script>
+  const menuPrincipal = document.getElementById("menuPrincipal");
+  const menuCocteles = document.getElementById("menuCocteles");
+  const menuBatidos = document.getElementById("menuBatidos");
+  const menuCarta = document.getElementById("menuCarta");
+
+  function mostrarMenu(tipo) {
+    menuPrincipal.style.display = "none";
+    if (tipo === "cocteles") menuCocteles.style.display = "block";
+    if (tipo === "batidos") menuBatidos.style.display = "block";
+    if (tipo === "carta") menuCarta.style.display = "block";
+  }
+
+  function volverMenu() {
+    menuCocteles.style.display = "none";
+    menuBatidos.style.display = "none";
+    menuCarta.style.display = "none";
+    menuPrincipal.style.display = "block";
+  }
+
+  // Activar menú principal al presionar "VER MENU"
+  document.querySelector(".menu-btn").addEventListener("click", () => {
+    document.querySelector(".cafe-cinnamon").style.display = "none";
+    menuPrincipal.style.display = "block";
+  });
+</script>
+<style>
+  /* Fondo general */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Fondo del menú principal */
+  .menu-principal {
+   background: url('https://i.imgur.com/IWnAFWD.png') no-repeat center center;
+background-size: cover;
+    color: #fff;
+    padding: 60px 10%;
+    text-align: center;
+  }
+
+  /* Fondos individuales para cada menú */
+  #menuCocteles {
+   background: url('https://i.imgur.com/IWnAFWD.png') no-repeat center center;
+background-size: cover;
+    color: #fff;
+  }
+
+  #menuBatidos {
+      background: url('https://i.imgur.com/IWnAFWD.png') no-repeat center center;
+background-size: cover;
+    color: #fff;
+  }
+
+  #menuCarta {
+      background: url('https://i.imgur.com/IWnAFWD.png') no-repeat center center;
+background-size: cover;
+    background-size: cover;
+    color: #fff;
+  }
+
+  /* Ajustes visuales */
+  .menu-detalle {
+    padding: 60px 10%;
+    text-align: center;
+    backdrop-filter: brightness(0.8);
+  }
+
+  .menu-detalle h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .menu-detalle ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 2;
+  }
+
+  .menu-detalle button {
+    margin-top: 30px;
+    padding: 10px 30px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .menu-detalle button:hover {
+    background-color: #333;
+  }
+</style>
+    
+  </body>
+  
+</html>
