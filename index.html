@@ -1,33 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Un sabor Mágico</title>
 <style>
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh; /* altura mínima de pantalla */
-  width: 100%;
-  background: url('https://i.imgur.com/VU7M9To.png') no-repeat center center fixed;
-  background-size: cover; /* el fondo se adapta al tamaño */
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  text-align: center;
-}
-
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: url('https://i.imgur.com/VU7M9To.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+  }
 
   .intro {
     height: 100vh;
@@ -35,7 +23,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    backdrop-filter: brightness(0.8); /* oscurece un poco para contraste */
+    backdrop-filter: brightness(0.8);
   }
 
   h1 {
@@ -73,62 +61,6 @@ body {
     padding: 40px;
   }
 
-  /* --- 9. MOBILE RESPONSIVENESS --- */
-  @media (max-width: 1024px) {
-    body { overflow: auto; padding: 20px; display: block; height: auto;}
-    .container { width: 100%; height: auto; overflow: hidden; margin-bottom: 50px; background-image: none;}
-    body:hover .container { width: 100%; }
-    .data-terminal { position: relative; opacity: 1; transform: none; width: auto; height: auto; margin-bottom: 20px; }
-    .player-container { top: 0; position: relative; margin-bottom: 10px; }
-    .character-art-container, .manga-panel, .gantz-ui-orb, .scanlines { display: none; }
-    .terminal-main { height: auto; }
-  }
-</style>
-</head>
-<body>
-  <!-- Intro -->
-  <section class="intro">
-    <h1>ES ALGO MÁS QUE UN</h1>
-    <h2>CAFÉ</h2>
-    <button id="startBtn">Iniciar</button>
-  </section>
-
-  <!-- Main Content -->
-  <section class="main-content">
-    <!-- Aquí va TODO tu código: reproductor, panels, data-terminal, etc. -->
-    <div class="container">
-
-<script>
-  const startBtn = document.getElementById("startBtn");
-  const intro = document.querySelector(".intro");
-  const mainContent = document.querySelector(".main-content");
-
-  startBtn.addEventListener("click", () => {
-    intro.style.display = "none";
-    mainContent.style.display = "block";
-  });
-</script>
-</body>
-</html>
-<!-- Sección Café Cinnamon -->
-<section class="cafe-cinnamon">
-  <div class="cafe-container">
-    <div class="cafe-images">
-      <img src="https://i.imgur.com/Ts6H4aH.jpeg" alt="Botellas de vino Café Cinnamon">
-      <img src="https://i.imgur.com/KFg0akp.jpeg" alt="Área del café con luces cálidas">
-    </div>
-
-    <div class="cafe-text">
-      <h1>CAFÉ CINNAMON</h1>
-      <p>
-        Café Cinnamon en Ocotal se ha consolidado como un espacio gastronómico que combina comodidad, modernidad y un estilo visual atractivo, ofreciendo a sus clientes mucho más que café y alimentos: una experiencia social y compartible. Su ambiente acogedor y su concepto instagrameable han generado gran interés en redes sociales, atrayendo tanto a jóvenes como a familias y grupos de amigos. La cuidada presentación de productos y la atmósfera diseñada para la convivencia fortalecen su identidad dentro del mercado local, mientras que su activa presencia digital amplifica la visibilidad y fomenta la interacción con el público. En conjunto, Café Cinnamon se posiciona como un lugar que no solo satisface el consumo de alimentos y bebidas, sino que crea experiencias agradables, memorables y compartibles, convirtiéndose en un referente de la vida social y gastronómica de la ciudad.
-      </p>
-      <button class="menu-btn">VER MENU</button>
-    </div>
-  </div>
-</section>
-
-<style>
   .cafe-cinnamon {
     background-color: #f8f8f4;
     color: #000;
@@ -149,15 +81,15 @@ body {
 
   .cafe-images {
     display: flex;
-    flex-direction: row; /* ahora en fila */
+    flex-direction: row;
     gap: 20px;
     flex: 1;
     min-width: 280px;
   }
 
   .cafe-images img {
-    width: 50%; /* cada imagen ocupa la mitad */
-    height: 400px; /* altura larga */
+    width: 50%;
+    height: 400px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     object-fit: cover;
@@ -167,7 +99,8 @@ body {
     flex: 1;
     min-width: 300px;
     text-align: justify;
-    line-height: 1.8; /* más espacio entre letras */
+    line-height: 1.8;
+    padding: 20px;
   }
 
   .cafe-text h1 {
@@ -180,7 +113,25 @@ body {
 
   .cafe-text p {
     font-size: 1rem;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
+  }
+
+  .cafe-info, .cafe-social {
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .cafe-social a {
+    color: #1e90ff; /* azul */
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .cafe-social a:hover {
+    text-decoration: underline;
+    color: #0d47a1; /* azul más oscuro */
   }
 
   .menu-btn {
@@ -217,6 +168,62 @@ body {
     .cafe-text p { font-size: 0.95rem; }
   }
 </style>
+</head>
+<body>
+  <!-- Intro -->
+  <section class="intro">
+    <h1>ES ALGO MÁS QUE UN</h1>
+    <h2>CAFÉ</h2>
+    <button id="startBtn">Iniciar</button>
+  </section>
+
+  <!-- Main Content -->
+  <section class="main-content">
+    <div class="container"></div>
+  </section>
+
+  <!-- Sección Café Cinnamon -->
+  <section class="cafe-cinnamon">
+    <div class="cafe-container">
+      <div class="cafe-images">
+        <img src="https://i.imgur.com/Ts6H4aH.jpeg" alt="Botellas de vino Café Cinnamon">
+        <img src="https://i.imgur.com/KFg0akp.jpeg" alt="Área del café con luces cálidas">
+      </div>
+
+      <div class="cafe-text">
+        <h1>CAFÉ CINNAMON</h1>
+        <p>
+         Café Cinnamon en Ocotal se ha consolidado como un espacio gastronómico que combina comodidad, modernidad y un estilo visual atractivo, ofreciendo a sus clientes mucho más que café y alimentos: una experiencia social y compartible. Su ambiente acogedor y su concepto instagrameable han generado gran interés en redes sociales, atrayendo tanto a jóvenes como a familias y grupos de amigos. La cuidada presentación de productos y la atmósfera diseñada para la convivencia fortalecen su identidad dentro del mercado local, mientras que su activa presencia digital amplifica la visibilidad y fomenta la interacción con el público. En conjunto, Café Cinnamon se posiciona como un lugar que no solo satisface el consumo de alimentos y bebidas, sino que crea experiencias agradables, memorables y compartibles, convirtiéndose en un referente de la vida social y gastronómica de la ciudad
+        </p>
+        <p class="cafe-info">
+          📍 Nos ubicamos del portón principal de la Tabacalera Protasa 1/2 cuadra al sur.<br>
+          🕒 Atendemos todos los días menos miércoles de 11 AM a 9 PM.
+        </p>
+        <p class="cafe-social">
+          🔗 Redes sociales:<br>
+          Facebook: <a href="https://www.facebook.com/share/1B6P6pJVd1/" target="_blank">Repostería Cinnamon</a><br>
+          Instagram: <a href="https://www.instagram.com/cafecinnamon_ni?igsh=Zng3MWVwaTl5bWIx" target="_blank">@cafecinnamon_ni</a><br>
+          WhatsApp: <a href="tel:+50585482107">+505 8548-2107</a><br>
+          TikTok: <a href="https://www.tiktok.com/@cafecinnamon_ni?_r=1&_t=ZS-96D5kd0Gd7c" target="_blank">@cafecinnamon_ni</a>
+        </p>
+        <button class="menu-btn">VER MENU</button>
+      </div>
+    </div>
+  </section>
+
+<script>
+  const startBtn = document.getElementById("startBtn");
+  const intro = document.querySelector(".intro");
+  const mainContent = document.querySelector(".main-content");
+
+  startBtn.addEventListener("click", () => {
+    intro.style.display = "none";
+    mainContent.style.display = "block";
+  });
+</script>
+</body>
+</html>
+
 <!-- Sección Menú Principal -->
 <section class="menu-principal" id="menuPrincipal" style="display:none;">
   <h1>CAFÉ CINNAMON OCOTAL</h1>
